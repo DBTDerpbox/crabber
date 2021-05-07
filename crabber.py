@@ -242,6 +242,7 @@ def signup():
         password = form.get("password").strip()
         confirm_password = form.get("confirm-password").strip()
 
+        return redirect("/signup?failed&error_msg=Sorry, registration is temporarily closed.")
         if utils.validate_email(email):
             if utils.validate_username(username):
                 if len(username) in range(3, 32):
